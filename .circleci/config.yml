@@ -5,3 +5,10 @@ workflows:
   node-tests:
     jobs:
       - node/test
+    test: 
+         docker:
+             - image: circleci/node:10-browsers
+         steps:
+              - run:
+                   name: Install local dependencies
+                   command: npm install
